@@ -2,34 +2,56 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3%2B-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 > Machine Learning pipeline for predicting COVID-19 vaccination rates globally, with focus on Iran as a case study.
+
+## Live Demo
+
+Run the Streamlit app locally:
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
 
 ## Project Overview
 
 This project implements a complete machine learning pipeline to predict daily COVID-19 vaccination counts using historical vaccination data. The project follows industry best practices for data science workflows, including data preprocessing, feature engineering, model training, evaluation, and deployment.
 
-## Key Features
+## Features
 
+### Notebook
 - **Comprehensive EDA**: Detailed exploratory data analysis with visualizations
 - **Feature Engineering**: Time-based features, lag features, and rolling statistics
 - **Multiple Models**: Random Forest, XGBoost, and LightGBM comparison
 - **Time Series Handling**: Proper train/test split respecting temporal order
-- **Model Evaluation**: RMSE, MAE, R², and MAPE metrics
+- **Model Evaluation**: RMSE, MAE, R2, and MAPE metrics
 - **Production Ready**: Saved models and scaler for deployment
+
+### Streamlit Web App
+- **Country Selection**: Choose any country from the dataset
+- **Interactive Dashboard**: 5 tabs with different visualizations
+- **Real-time Predictions**: Watch model training and predictions
+- **Model Comparison**: Compare multiple ML models side-by-side
+- **Feature Importance**: Understand what drives predictions
+- **Dark Theme**: Modern, attractive UI with gradient backgrounds
+- **Responsive Design**: Works on desktop and mobile
 
 ## Project Structure
 
 ```
 Covid-Vaccination/
-├── Project1.ipynb          # Main notebook with complete pipeline
+├── Project1.ipynb              # Main notebook with complete pipeline
+├── app.py                      # Streamlit web application
+├── .streamlit/
+│   └── config.toml             # Streamlit theme configuration
 ├── country_vaccinations.csv    # Primary dataset
 ├── country_vaccinations_by_manufacturer.csv  # Manufacturer data
-├── requirements.txt           # Python dependencies
-├── best_vaccination_model.pkl # Trained model (generated)
-├── scaler.pkl                 # Feature scaler (generated)
-└── README.md                  # This file
+├── requirements.txt            # Python dependencies
+├── best_vaccination_model.pkl  # Trained model (generated)
+├── scaler.pkl                  # Feature scaler (generated)
+└── README.md                   # This file
 ```
 
 ## Dataset
@@ -61,7 +83,7 @@ Covid-Vaccination/
 ### 4. Evaluation Metrics
 - RMSE (Root Mean Squared Error)
 - MAE (Mean Absolute Error)
-- R² (Coefficient of Determination)
+- R2 (Coefficient of Determination)
 - MAPE (Mean Absolute Percentage Error)
 
 ## Installation
@@ -87,6 +109,11 @@ pip install -r requirements.txt
 jupyter notebook Project1.ipynb
 ```
 
+### Running the Web App
+```bash
+streamlit run app.py
+```
+
 ### Using the Saved Model
 ```python
 import joblib
@@ -102,7 +129,7 @@ predictions = model.predict(X_new)
 
 ## Results
 
-| Model | RMSE | MAE | R² | MAPE |
+| Model | RMSE | MAE | R2 | MAPE |
 |-------|------|-----|----|----|
 | Random Forest | - | - | - | - |
 | XGBoost | - | - | - | - |
@@ -118,6 +145,8 @@ predictions = model.predict(X_new)
 - XGBoost
 - LightGBM
 - Matplotlib & Seaborn
+- Streamlit
+- Plotly
 - Jupyter Notebook
 
 ## License
@@ -130,6 +159,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Scikit-learn](https://scikit-learn.org/) documentation
 - [XGBoost](https://xgboost.readthedocs.io/) documentation
 - [LightGBM](https://lightgbm.readthedocs.io/) documentation
+- [Streamlit](https://streamlit.io/) documentation
 
 ---
 
